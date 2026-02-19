@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { CONFIG } from "@/lib/config";
 import { useCart } from "@/context/CartContext";
 
@@ -13,7 +14,9 @@ function WhatsAppIcon({ className = "chatbot-whatsapp-icon" }: { className?: str
 }
 
 export default function Chatbot() {
+  const pathname = usePathname();
   const { cart, cartCount, removeFromCart } = useCart();
+  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     { text: "Hi! 👋 Type your message or inquiry below and click Send to open WhatsApp directly.", isUser: false },
@@ -21,6 +24,12 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [inquirySummary, setInquirySummary] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const openHandler = () => setOpen(true);
+    window.addEventListener("chatbot-open", openHandler);
+    return () => window.removeEventListener("chatbot-open", openHandler);
+  }, []);
 
   useEffect(() => {
     const handler = (e: CustomEvent<{ name: string; price: string }>) => {
@@ -32,8 +41,8 @@ export default function Chatbot() {
       ]);
       setInquirySummary(`Product: ${e.detail.name} | Price: ${e.detail.price}`);
     };
-    window.addEventListener("chatbot-inquire" as any, handler);
-    return () => window.removeEventListener("chatbot-inquire" as any, handler);
+    window.addEventListener("chatbot-inquire", handler);
+    return () => window.removeEventListener("chatbot-inquire", handler);
   }, []);
 
   useEffect(() => {
@@ -87,6 +96,7 @@ export default function Chatbot() {
 
   return (
     <>
+      {!isHome && (
       <button
         className="chatbot-toggle"
         onClick={() => setOpen(!open)}
@@ -98,6 +108,7 @@ export default function Chatbot() {
           <span className="chatbot-cart-badge">+{cartCount}</span>
         )}
       </button>
+      )}
       <div className={`chatbot-panel ${open ? "open" : ""}`}>
         <div className="chatbot-header">
           <span className="chatbot-header-icon">

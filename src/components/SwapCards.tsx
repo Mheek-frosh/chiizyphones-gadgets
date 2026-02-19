@@ -1,7 +1,7 @@
 "use client";
 
 export default function SwapCards() {
-  const openChat = () => document.querySelector<HTMLButtonElement>(".chatbot-toggle")?.click();
+  const openChat = () => window.dispatchEvent(new CustomEvent("chatbot-open"));
 
   return (
     <div className="cta-cards">

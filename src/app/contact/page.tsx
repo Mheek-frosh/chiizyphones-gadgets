@@ -67,7 +67,7 @@ export default function ContactPage() {
                     id="name"
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                     placeholder="John Doe"
                     required
                   />
@@ -78,7 +78,7 @@ export default function ContactPage() {
                     id="email"
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     placeholder="john@example.com"
                   />
                 </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
                     placeholder="What would you like to ask or order?"
                     rows={4}
                     required
