@@ -18,7 +18,8 @@ export default function AdminPage() {
   useEffect(() => {
     fetch("/api/products")
       .then((r) => r.json())
-      .then(setData)
+      .then((d) => setData(d.categories && d.products ? d : { categories: [], products: [] }))
+      .catch(() => setData({ categories: [], products: [] }))
       .finally(() => setLoading(false));
   }, [updated]);
 
@@ -32,6 +33,9 @@ export default function AdminPage() {
       setUpdated(!updated);
       setEditing(null);
       setForm({ name: "", category: "phones", price: "", image: "", description: "", featured: false });
+    } else {
+      const err = await res.json().catch(() => ({}));
+      alert(err.error || "Failed to save. Product edits may not persist on Vercel.");
     }
   };
 

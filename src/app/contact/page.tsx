@@ -43,6 +43,9 @@ export default function ContactPage() {
           </button>
           <ul className="nav-links">
             <li><Link href="/">Home</Link></li>
+            <li><Link href="/#swap">Swap</Link></li>
+            <li><Link href="/#get-new">Get New</Link></li>
+            <li><Link href="/#products">Products</Link></li>
             <li><Link href="/catalog">Catalog</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>

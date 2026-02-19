@@ -1,20 +1,27 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import productsData from "@/lib/products";
 
 const DATA_PATH = path.join(process.cwd(), "data", "products.json");
 
 export async function GET() {
   try {
-    const file = await fs.readFile(DATA_PATH, "utf-8");
-    const data = JSON.parse(file);
-    return NextResponse.json(data);
+    return NextResponse.json(productsData);
   } catch (e) {
     return NextResponse.json({ error: "Failed to load products" }, { status: 500 });
   }
 }
 
 export async function POST(request: Request) {
+  // Vercel serverless has read-only filesystem - admin edits won't persist in production
+  if (process.env.VERCEL) {
+    return NextResponse.json(
+      { error: "Product edits are not saved on Vercel. Run locally to manage products." },
+      { status: 503 }
+    );
+  }
+
   try {
     const body = await request.json();
     const file = await fs.readFile(DATA_PATH, "utf-8");

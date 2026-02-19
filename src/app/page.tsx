@@ -6,16 +6,10 @@ import HeroSection from "@/components/HeroSection";
 import SwapCards from "@/components/SwapCards";
 import GetNewSection from "@/components/GetNewSection";
 import ProductsSection from "@/components/ProductsSection";
-
-async function getProducts() {
-  const fs = await import("fs/promises");
-  const path = await import("path");
-  const file = await fs.readFile(path.join(process.cwd(), "data", "products.json"), "utf-8");
-  return JSON.parse(file);
-}
+import productsData from "@/lib/products";
 
 export default async function Home() {
-  const { categories, products } = await getProducts();
+  const { categories, products } = productsData;
 
   return (
     <>

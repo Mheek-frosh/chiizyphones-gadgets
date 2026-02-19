@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Chatbot from "@/components/Chatbot";
+import ScrollToHash from "@/components/ScrollToHash";
 
 export const metadata: Metadata = {
   title: "Chizzy Phones & Gadgets - Swap • Upgrade • Get New",
@@ -15,6 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <CartProvider>
+          <Suspense fallback={null}>
+            <ScrollToHash />
+          </Suspense>
           {children}
           <Chatbot />
         </CartProvider>
