@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {"id": "all", "name": "All", "slug": "all", "icon": "✨", "description": "View all products"},
+    {"id": "phones", "name": "Phones", "slug": "phones", "icon": "📱", "description": "Latest smartphones from iPhone, Samsung, and more"},
+    {"id": "macbooks", "name": "MacBooks", "slug": "macbooks", "icon": "💻", "description": "Apple MacBook Pro, Air & more"},
+    {"id": "speakers", "name": "Speakers & Audio", "slug": "speakers", "icon": "🔊", "description": "Premium speakers and audio gear"},
+    {"id": "accessories", "name": "Accessories", "slug": "accessories", "icon": "⌚", "description": "Cases, chargers, watches & more"}
+  ],
+  "products": [
+    {"id": "iphone15", "name": "iPhone 15 Pro Max", "category": "phones", "price": "₦1,250,000", "image": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop", "description": "Latest iPhone with titanium design, A17 Pro chip", "featured": true},
+    {"id": "samsung24", "name": "Samsung Galaxy S24 Ultra", "category": "phones", "price": "₦1,180,000", "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop", "description": "AI-powered flagship with S Pen", "featured": true},
+    {"id": "macbook-pro", "name": "MacBook Pro 14\" M3", "category": "macbooks", "price": "₦2,450,000", "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop", "description": "M3 Pro chip, 18GB RAM, 512GB SSD", "featured": true},
+    {"id": "macbook-air", "name": "MacBook Air M2", "category": "macbooks", "price": "₦1,850,000", "image": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=400&h=400&fit=crop", "description": "Ultra-thin, all-day battery", "featured": false},
+    {"id": "jbl-speaker", "name": "JBL Charge 5", "category": "speakers", "price": "₦85,000", "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop", "description": "Portable Bluetooth speaker, 20hr playtime", "featured": false},
+    {"id": "airpods-pro", "name": "AirPods Pro 2", "category": "accessories", "price": "₦285,000", "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=400&h=400&fit=crop", "description": "Active Noise Cancellation, MagSafe charging", "featured": true}
+  ]
+}

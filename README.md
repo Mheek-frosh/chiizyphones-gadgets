@@ -1,22 +1,20 @@
 # Chizzy Phones & Gadgets
 
-**Your Next.js site is at:** `c:\Users\hp\Desktop\chizzy-phones-gadgets`
+Next.js site for Chizzy Phones & Gadgets – swap/trade-in, products, cart, WhatsApp chatbot.
 
-The `&` in this folder name breaks npm on Windows. Use the folder above instead.
-
-## Run the site
+## Run locally
 
 ```bash
-cd "c:\Users\hp\Desktop\chizzy-phones-gadgets"
+npm install
 npm run dev
 ```
 
 Then open **http://localhost:3000**
 
-## Admin
+## Deploy (Vercel)
 
-- http://localhost:3000/admin
+Connect this repo to Vercel. The project will auto-detect Next.js and deploy.
 
 ## Config
 
-Edit `chizzy-phones-gadgets/src/lib/config.ts` – add your WhatsApp number.
+Edit `src/lib/config.ts` – WhatsApp number, site name, address.
