@@ -68,11 +68,11 @@ export default function AdminPage() {
             <h3>{editing.id ? "Edit Product" : "Add Product"}</h3>
             <div style={{ marginTop: "1rem" }}>
               <label style={{ display: "block", marginBottom: "0.25rem", fontWeight: 600 }}>Name</label>
-              <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} style={{ width: "100%", padding: "0.5rem" }} />
+              <input value={form.name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, name: e.target.value })} style={{ width: "100%", padding: "0.5rem" }} />
             </div>
             <div style={{ marginTop: "0.5rem" }}>
               <label style={{ display: "block", marginBottom: "0.25rem", fontWeight: 600 }}>Category</label>
-              <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} style={{ width: "100%", padding: "0.5rem" }}>
+              <select value={form.category} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setForm({ ...form, category: e.target.value })} style={{ width: "100%", padding: "0.5rem" }}>
                 {data.categories.filter((c) => c.id !== "all").map((c) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
@@ -80,18 +80,18 @@ export default function AdminPage() {
             </div>
             <div style={{ marginTop: "0.5rem" }}>
               <label style={{ display: "block", marginBottom: "0.25rem", fontWeight: 600 }}>Price</label>
-              <input value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} placeholder="₦1,250,000" style={{ width: "100%", padding: "0.5rem" }} />
+              <input value={form.price} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, price: e.target.value })} placeholder="₦1,250,000" style={{ width: "100%", padding: "0.5rem" }} />
             </div>
             <div style={{ marginTop: "0.5rem" }}>
               <label style={{ display: "block", marginBottom: "0.25rem", fontWeight: 600 }}>Image URL</label>
-              <input value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} style={{ width: "100%", padding: "0.5rem" }} />
+              <input value={form.image} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, image: e.target.value })} style={{ width: "100%", padding: "0.5rem" }} />
             </div>
             <div style={{ marginTop: "0.5rem" }}>
               <label style={{ display: "block", marginBottom: "0.25rem", fontWeight: 600 }}>Description</label>
-              <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={2} style={{ width: "100%", padding: "0.5rem" }} />
+              <textarea value={form.description} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setForm({ ...form, description: e.target.value })} rows={2} style={{ width: "100%", padding: "0.5rem" }} />
             </div>
             <div style={{ marginTop: "0.5rem" }}>
-              <label><input type="checkbox" checked={form.featured} onChange={(e) => setForm({ ...form, featured: e.target.checked })} /> Featured</label>
+              <label><input type="checkbox" checked={form.featured} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, featured: e.target.checked })} /> Featured</label>
             </div>
             <div style={{ marginTop: "1rem", display: "flex", gap: "0.5rem" }}>
               <button

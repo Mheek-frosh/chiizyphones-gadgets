@@ -1,5 +1,6 @@
 // Edit this file to add your details
 export const CONFIG = {
+  // WhatsApp: country code + number, no + or spaces (e.g. 2347037856251 for Nigeria)
   WHATSAPP_NUMBER: '2347037856251',
   SITE_NAME: 'Chizzy Phones & Gadgets',
   SITE_TAGLINE: 'Swap • Upgrade • Get New',

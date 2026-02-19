@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { CONFIG } from "@/lib/config";
-import Chatbot from "@/components/Chatbot";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SwapCards from "@/components/SwapCards";
